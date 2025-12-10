@@ -1,148 +1,123 @@
-Task Manager App
+# Task Manager App
 
-A small and straightforward task manager built with Vue 3 and Supabase.
-Create tasks, group them into categories, set priorities, and track what’s done and what still needs attention.
+A small and straightforward task manager built with **Vue 3** and **Supabase**.  
+Create tasks, group them into categories, set priorities, and track what's done and what still needs attention.
 
-Overview
+## Overview
 
-This app helps you stay organized.
-You can add tasks, edit them, mark them as completed, and filter them by category.
+This app helps you stay organized.  
+You can add tasks, edit them, mark them as completed, and filter them by category.  
 Everything is saved in a Supabase backend.
 
-Features
+## Features
 
-Add, edit, and delete tasks
+- Add, edit, and delete tasks
+- Category support (with colors/icons)
+- Optional priority and due dates
+- Mark tasks as completed or pending
+- Mobile-friendly layout
+- Simple dark UI
 
-Category support (with colors/icons)
+## Getting Started
 
-Optional priority and due dates
+### Requirements
 
-Mark tasks as completed or pending
+- Node.js
+- npm or yarn
+- A Supabase project
 
-Mobile-friendly layout
+### Setup
 
-Simple dark UI
+1. **Clone the repo**
 
-Getting Started
-Requirements
-
-Node.js
-
-npm or yarn
-
-A Supabase project
-
-Setup
-
-Clone the repo
-
+```bash
 git clone <your-repo-url>
 cd task-manager
+```
 
+2. **Install packages:**
 
-
-Install packages:
-
+```bash
 npm install
+```
 
+3. **Add your Supabase credentials:**
 
-Add your Supabase credentials:
+Create a `.env` file:
 
-Create a .env file:
-
+```env
 VITE_SUPABASE_URL=your_url
 VITE_SUPABASE_ANON_KEY=your_key
+```
 
+4. **Run the app:**
 
-Run the app:
-
+```bash
 npm run dev
+```
 
+5. **Visit:**
 
-Visit:
-
+```
 http://localhost:5173
+```
 
-How It Works
-Adding a Task
+## How It Works
 
-Click Add Task
+### Adding a Task
 
-Fill in the title, description, and category
+1. Click **Add Task**
+2. Fill in the title, description, and category
+3. Set priority, due date, or image if you want
+4. Save it
 
-Set priority, due date, or image if you want
+### Viewing & Editing
 
-Save it
+- Click any task card to see the full details
+- From there, you can edit or delete the task
 
-Viewing & Editing
+### Completing Tasks
 
-Click any task card to see the full details
+- Use the toggle to mark a task as "Completed" or switch it back to "Pending".
 
-From there, you can edit or delete the task
+## Tech Stack
 
-Completing Tasks
+- **Vue 3** - Progressive JavaScript framework
+- **Vite** - Fast build tool
+- **Pinia** - State management
+- **Vue Router** - Routing
+- **Tailwind CSS** - Utility-first CSS
+- **Supabase** - Backend as a Service
+- **Axios** - HTTP client
 
-Use the toggle to mark a task as “Completed” or switch it back to “Pending”.
+## Project Structure
 
-Tech Used
-
-Vue 3
-
-Vite
-
-Pinia
-
-Vue Router
-
-Tailwind CSS
-
-Supabase
-
-Axios
-
-Project Structure
+```
 src/
   api/           # API requests
   components/    # UI components
   pages/         # Main pages
   stores/        # Pinia stores
   router/        # Routes
+```
 
-Database (Supabase)
-Tasks
+## Database (Supabase)
 
-id
+### Tasks Table
 
-title
+- `id`
+- `title`
+- `description`
+- `category_id`
+- `priority`
+- `due_date`
+- `image_url`
+- `completed`
+- `created_at`
 
-description
+### Categories Table
 
-category_id
-
-priority
-
-due_date
-
-image_url
-
-completed
-
-created_at
-
-Categories
-
-id
-
-name
-
-color
-
-icon_url
-
-Common Issues
-
-Tasks not loading
-→ Check .env values
-
-Can’t create tasks
-→ Title, description, and category are required
+- `id`
+- `name`
+- `color`
+- `icon_url`
